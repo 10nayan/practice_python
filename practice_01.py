@@ -162,6 +162,22 @@ c = Cow(12, "brown")
 c.make_sound()
 a.make_sound()
 
+list1 = [1, 2, [3, 4],[5,6,[7,8,[9,10]]]]
+list2 =[1,2,3,4]
+new_list = []
+
+def format_list(input):
+    if isinstance(input, int):
+        new_list.append(input)
+        return
+    for i in range(len(input)):
+        if isinstance(input[i], int):
+            print(input[i])
+            new_list.append(input[i])
+        elif isinstance(input[i], list):
+            if isinstance(input[i], list):
+                format_list(input[i])
+
 # list1 = list(range(10))
 # square_list = list(map(lambda x:x**2, list1))
 # even_list = list(filter(lambda x:True if x%2 == 0 else False, list1))
@@ -180,3 +196,20 @@ a.make_sound()
 # print(check_palindrome("nn"))
 # print(selection_sort([5,1,8,1,3,7,4,2]))
 # print(custom_selection_sort([5,1,8,1,3,7,4,2]))
+
+# group anagram
+input_list = ["eat","tea","tan","ate","nat","bat"]
+
+# Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+def find_anagram(arr):
+    result = {}
+    for word in arr:
+        sorted_word = "".join(sorted(word))
+        if sorted_word in result:
+            result[sorted_word].append(word)
+        else:
+            result[sorted_word] = [word]
+    return list(result.values())
+    
+print(find_anagram(input_list))
