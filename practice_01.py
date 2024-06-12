@@ -7,6 +7,9 @@
 # 7. String manipulation. "The Sky is Blue" to "Blue is The Sky"
 # 8. Find the maximum repeated character in a string without having o(n2) complexity.
 # 9. Find a maximum and minimum value in a List without using any predefined function.
+#10. Check if a no is prime or get the prime nos upto n
+#11. Group amalgam words
+
 import time
 import math
 from functools import reduce
@@ -213,3 +216,24 @@ def find_anagram(arr):
     return list(result.values())
     
 print(find_anagram(input_list))
+
+list1 = [1,2,3,4]  
+list2 = [5,6,7,8]
+# outout :{1:5 ,2:6, 3:7, 4:8}
+
+def get_output(list1, list2):
+    result = {k:v for k,v in zip(list1, list2)}
+    return result
+    
+print(get_output(list1, list2))
+
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+        else:
+            continue
+    return True
+        
+print(is_prime(1))
+print([i if is_prime(i) == True else 0 for i in range(1, 10)])
