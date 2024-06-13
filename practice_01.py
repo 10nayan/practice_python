@@ -12,6 +12,7 @@
 #12. Convert this list [1, 2, [3, 4],[5,6,[7,8,[9,10]]]] to [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 #13. Convert these two lists [1,2,3,4] and [5,6,7,8] to {1:5 ,2:6, 3:7, 4:8}
 #14 Class inheritance and method overriding
+#15 Python decorator, get the execution time of a function
 
 import time
 import math
@@ -69,6 +70,7 @@ def fib_series(n):
         a, b = b, a+b
 # print("Fib series", list(fib_series(10)))
 
+#15
 def wrapper_function(func):
     def wrapper(*args, **kwargs):
         t1 = time.time()
